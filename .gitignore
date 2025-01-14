@@ -16,3 +16,4 @@ wp-content/debug.log
 
 #Include Files
 !wp-config-sample.php
+!wp-content/plugins/operators-provider
