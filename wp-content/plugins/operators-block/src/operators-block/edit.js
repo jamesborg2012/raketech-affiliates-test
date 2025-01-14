@@ -31,11 +31,13 @@ import './editor.scss';
  */
 export default function Edit() {
 	return (
+		<>
 		<p { ...useBlockProps() }>
 			{ __(
-				'Operators Block – hello from the editor!',
+				'Render the Operators',
 				'operators-block'
 			) }
 		</p>
+		</>
 	);
 }

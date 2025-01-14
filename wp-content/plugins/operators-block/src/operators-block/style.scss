@@ -5,8 +5,90 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-create-block-operators-block {
+ .wp-block-create-block-operators-list-block {
 	background-color: #21759b;
 	color: #fff;
 	padding: 2px;
+}
+
+.is-layout-constrained > .operators-list-block-container {
+	max-width: 75%;
+}
+
+.operators-container {
+	.single-operator-container {
+		display: flex;
+		align-items: stretch;
+		justify-content: center;
+		background-color: #1a1a1a;
+		margin-bottom: 20px;
+		border-radius: 15px;
+		padding: 15px;
+		color: #fff;
+		text-align: center;
+		height: 200px;
+
+		.operator-logo-container {
+			width: 20%;
+			margin-right: 15px;
+		}
+
+		.operator-content-container {
+			flex: 1 0 0%;
+
+			.flex-container {
+				display: flex;
+				align-items: center;
+				height: 100%;
+
+				.operator-contents {
+					flex: 1 0 0%;
+
+					.operator-name {
+						font-size: 14px;
+					}
+
+					.promo-code-container {
+						border: 1px dotted #fff;
+						max-width: 50%;
+						font-size: 16px;
+						margin-left: auto;
+						margin-right: auto;
+					}
+
+					.terms-conditions {
+						text-align: left;
+						font-size: 10px;
+
+						.terms-link {
+							text-decoration: none;
+							color: #ff6600;
+						}
+					}
+				}
+
+				.operator-buttons {
+					width: 20%;
+
+					.button {
+						display: block;
+						padding: 15px 5px;
+						border-radius: 15px;
+						text-transform: uppercase;
+						text-decoration: none;
+
+						&.affiliate-link {
+							background-color: #ff6600;
+						}
+
+						&.permalink {
+							margin-top: 10px;
+							background: transparent;
+							border: 1px solid #fff;
+						}
+					}
+				}
+			}
+		}
+	}
 }
