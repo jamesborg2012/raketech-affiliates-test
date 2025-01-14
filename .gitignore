@@ -1,0 +1,18 @@
+# Folders
+wp-admin
+wp-includes
+wp-content/uploads
+wp-content/themes
+wp-content/plugins/*
+
+# Individual Files
+.htaccess
+index.php
+license.txt
+readme.html
+wp-*.php
+xmlrpc.php
+wp-content/debug.log
+
+#Include Files
+!wp-config-sample.php
