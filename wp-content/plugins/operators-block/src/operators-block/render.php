@@ -3,48 +3,54 @@
 $response = wp_remote_get(get_site_url(null, 'wp-json/operator-provider/v1/list?ordered=true'));
 $operators = json_decode($response['body'], true);
 
-$display_date = date('F Y')
+$display_date = date('F Y');
 
 ?>
 <div class="operators-list-block-container">
 	<div class='title-container'>
 		<strong>Best Betting Sites | <?= $display_date ?></strong>
 	</div>
-	<div class='operators-filter'></div>
-	<div class='operators-container'>
-		<?php foreach ($operators as $operator): ?>
-			<div class='single-operator-container' id=<?= $operator['operator'] ?>>
-				<div class='operator-logo-container' style="background-color: <?= $operator['logo_bg_color'] ?>;">
-					Logo will be here!
-				</div>
-				<div class='operator-content-container'>
-					<div class='flex-container'>
-						<div class='operator-contents operator-flex-column'>
-							<p class='operator-name'><?= $operator['operator'] . ' ' . $operator['bonus_type'] ?></p>
-							<p class='operator-amount'>
-								<strong><?= $operator['amount'] ?></strong>
-							</p>
-							<?php if (!empty($operator['promo_code'])): ?>
-								<div class='promo-code-container'>
-									<p class='promo-code'>
-										Exclusive with Raketech - use
-										<strong class='promo-code' data-promo=<?= $operator['promo_code'] ?>>
-											<?= $operator['promo_code'] ?>
-										</strong>
-									</p>
-								</div>
-							<?php endif; ?>
-							<p class="terms-conditions">
-								Advertising link 18+. <a href='<?= $operator['terms_link'] ?>' target="_blank" class='terms-link'>Terms & Conditions</a> apply. Please play responsibly
-							</p>
-						</div>
-						<div class='operator-buttons operator-flex-column'>
-							<a href='<?= $operator['affiliate_link'] ?>' target="_blank" class='affiliate-link button'>Visit</a>
-							<a href='<?= $operator['permalink'] ?>' target="_blank" class='permalink button'>Review</a>
-						</div>
-					</div>
-				</div>
+	<div class='operators-filter-container'>
+		<strong>Filter the operators list!</strong>
+		<div class='operators-filter'>
+			<div class='operators-promo-code-filter'>
+				<label>
+					<input type="checkbox" name='promo-code-filter' id='promo-code-filter' value='yes'>
+					Show operators with a promo code only
+				</label>
 			</div>
-		<?php endforeach; ?>
+			<div class='operators-bonus-type-filter'>
+				<select name='bonus-type-filter' id='bonus-type-filter'>
+					<option value="">Select bonus type</option>
+					<?php
+					foreach ($operators as $operator):
+						if (empty($operator['bonus_type'])):
+							continue;
+						endif;
+					?>
+						<option value="<?= $operator['bonus_type'] ?>">
+							<?= $operator['bonus_type'] ?>
+						</option>
+					<?php
+					endforeach; ?>
+				</select>
+			</div>
+			<div class="filter-button-container">
+				<button class='filter-operators' type="button">Filter your Toplist</button>
+			</div>
+		</div>
+	</div>
+	<div class='operators-container'>
+		<?php
+		ob_start();
+		if (empty($operators)):
+			include(__DIR__ . '/views/single-operator-card.php');
+		else:
+			foreach ($operators as $operator):
+				include(__DIR__ . '/views/single-operator-card.php');
+			endforeach;
+		endif;
+		ob_get_contents();
+		echo ob_get_clean(); ?>
 	</div>
 </div>

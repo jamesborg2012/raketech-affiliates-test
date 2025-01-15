@@ -34,8 +34,24 @@ class Operators_Controller extends Operators_Provider_Core
             $operators_json = file_get_contents(dirname(__FILE__, 3) . '/assets/json/operators.json');
             $operators = json_decode($operators_json, true);
 
+            if (!empty($query_params['bonus_type'])) {
+                foreach ($operators as $key => $operator) {
+                    if ($operator['bonus_type'] != $query_params['bonus_type']) {
+                        unset($operators[$key]);
+                    }
+                }
+            }
+
+            if (!empty($query_params['filter_promo']) && $query_params['filter_promo'] == 'yes') {
+                foreach ($operators as $key => $operator) {
+                    if (empty($operator['promo_code'])) {
+                        unset($operators[$key]);
+                    }
+                }
+            }
+
             //If requested to ordered, ordering by position
-            if (!empty($query_params['ordered']) && $query_params['ordered']) {
+            if (!empty($query_params['ordered']) && $query_params['ordered'] == true) {
                 usort($operators, function ($a, $b) {
                     return $a['position'] <=> $b['position'];
                 });
