@@ -31,7 +31,7 @@ $logoPath = plugin_dir_url(dirname(__FILE__, 3)) . 'assets/logo.jpg';
                 </p>
             </div>
             <div class='operator-buttons operator-flex-column desktop-display'>
-                <a href='<?= $operator['affiliate_link'] ?>' target="_blank" class='affiliate-link button'>Visit</a>
+                <a href='<?= $operator['affiliate_link'] ?>' target="_blank" class='external-link button'>Visit</a>
                 <a href='<?= $operator['permalink'] ?>' target="_blank" class='permalink button'>Review</a>
             </div>
             <div class="terms-conditions-mobile">

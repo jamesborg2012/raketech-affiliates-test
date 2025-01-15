@@ -173,11 +173,11 @@
     margin-bottom: 20px;
   }
 }
-.operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.affiliate-link {
+.operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.external-link {
   background-color: #ff6600;
 }
 @media screen and (max-width: 1200px) {
-  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.affiliate-link {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.external-link {
     margin-left: 15px;
   }
 }
