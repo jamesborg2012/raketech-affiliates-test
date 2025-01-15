@@ -15,6 +15,50 @@
 	max-width: 75%;
 }
 
+.operators-filter-container {
+	border: 1px dotted #000;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	padding: 15px;
+
+	width: 60%;
+	margin-left: 50%;
+	transform: translateX(-50%);	
+
+	@media screen and (max-width: 800px) {
+		width: 90%;
+	}
+
+	.operators-filter {
+		display: flex;
+		gap: 20px;
+
+		@media screen and (max-width: 480px) {
+			flex-direction: column;
+			gap: 10px;
+		}
+
+		.filter {
+			label {
+				font-size: 18px;
+			}
+		}
+	}
+
+	.filter-button-container {
+		.filter-operators {
+			width: 100%;
+			padding: 15px 0;
+			border-radius: 15px;
+			border: none;
+			background-color: #ff6600;
+			color: #fff;
+			text-transform: uppercase;
+			margin-top: 15px;
+		}
+	}
+}
+
 .operators-container {
 	.single-operator-container {
 		display: flex;
@@ -28,24 +72,48 @@
 		text-align: center;
 		height: 200px;
 
+		@media screen and (max-width: 900px) {
+			display: block;
+			height: auto;
+		}
+
 		.operator-logo-container {
 			width: 20%;
 			margin-right: 15px;
+
+			@media screen and (max-width: 1200px) {
+				width: 35%;
+			}
+
+			@media screen and (max-width: 900px) {
+				// display: none;
+			}
+
+			img {
+				width: 100%;
+				height: 100%;
+			}
 		}
 
 		.operator-content-container {
 			flex: 1 0 0%;
 
 			.flex-container {
-				display: flex;
-				align-items: center;
 				height: 100%;
 
+				@media screen and (min-width: 1201px) {
+					display: flex;
+					align-items: center;	
+				}
+
 				.operator-contents {
-					flex: 1 0 0%;
+					@media screen and (min-width: 1201px) {
+						flex: 1 0 0%;
+					}
 
 					.operator-name {
 						font-size: 14px;
+						margin-top: 0;
 					}
 
 					.promo-code-container {
@@ -54,11 +122,30 @@
 						font-size: 16px;
 						margin-left: auto;
 						margin-right: auto;
+						cursor: pointer;
+
+						@media screen and (max-width: 1200px) {
+							max-width: 90%;
+							margin-bottom: 20px;
+						}
+
+						.promo-code-text {
+							.promo-code {
+								color: #ff6600;
+							}
+							.fa-copy {
+								margin-left: 5px;
+							}
+						}
 					}
 
 					.terms-conditions {
 						text-align: left;
-						font-size: 10px;
+						font-size: 12px;
+
+						@media screen and (max-width: 1200px) {
+							display: none;
+						}
 
 						.terms-link {
 							text-decoration: none;
@@ -70,22 +157,65 @@
 				.operator-buttons {
 					width: 20%;
 
+					@media screen and (max-width: 1200px) {
+						width: 100%;
+						display: flex;
+						justify-content: center;
+					}
+					@media screen and (max-width: 480px) {
+						display: block;
+					}
+
 					.button {
 						display: block;
-						padding: 15px 5px;
+						padding: 15px 0;
 						border-radius: 15px;
 						text-transform: uppercase;
 						text-decoration: none;
 
+						@media screen and (max-width: 1200px) {
+							width: 45%;
+						}
+
+						@media screen and (max-width: 480px) {
+							width: 100%;
+							margin-bottom: 20px;
+						}
+
 						&.affiliate-link {
 							background-color: #ff6600;
+
+							@media screen and (max-width: 1200px) {
+								margin-right: 15px;
+							}
 						}
 
 						&.permalink {
 							margin-top: 10px;
 							background: transparent;
 							border: 1px solid #fff;
+
+							@media screen and (max-width: 1200px) {
+								margin-top: 0;
+							}
 						}
+					}
+				}
+
+				.terms-conditions-mobile {
+					display: none;
+
+					margin-top: 20px;
+					text-align: center;
+					font-size: 12px;
+
+					.terms-link {
+						text-decoration: none;
+						color: #ff6600;
+					}
+
+					@media screen and (max-width: 1200px) {
+						display: block;
 					}
 				}
 			}

@@ -1,5 +1,6 @@
 jQuery(document).ready(function ($) {
     $('.filter-operators').click(function(e) {
+        e.preventDefault();
         $filterPromo =  $(document).find('#promo-code-filter').is(':checked') ? 'yes' : 'no';
         $bonusType = $(document).find('#bonus-type-filter').val();
 
@@ -19,5 +20,18 @@ jQuery(document).ready(function ($) {
                 }
             }
        });   
+    });
+
+    $(document).on('click', '.promo-code-text', function (e) {
+        e.preventDefault();
+
+        $promoCode = $(this).find('.promo-code').attr('data-promo');
+
+        if (navigator.clipboard) {
+            navigator.clipboard.writeText($promoCode)
+                .then(() => {
+                    alert('Promo Code ' + $promoCode + ' copied to clipboard');
+                })
+        }
     });
 });

@@ -35,6 +35,8 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 function enqueue_scripts()
 {
+	wp_enqueue_style('font-awesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
+
 	wp_enqueue_script('ajax-script', plugin_dir_url(__FILE__) . 'src/operators-block/ajax-scripts.js', array('jquery'));
 	wp_localize_script('ajax-script', 'ajaxObj', array('ajaxUrl' => admin_url('admin-ajax.php')));
 }

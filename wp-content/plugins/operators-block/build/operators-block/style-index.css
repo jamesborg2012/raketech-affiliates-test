@@ -17,6 +17,44 @@
   max-width: 75%;
 }
 
+.operators-filter-container {
+  border: 1px dotted #000;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 15px;
+  width: 60%;
+  margin-left: 50%;
+  transform: translateX(-50%);
+}
+@media screen and (max-width: 800px) {
+  .operators-filter-container {
+    width: 90%;
+  }
+}
+.operators-filter-container .operators-filter {
+  display: flex;
+  gap: 20px;
+}
+@media screen and (max-width: 480px) {
+  .operators-filter-container .operators-filter {
+    flex-direction: column;
+    gap: 10px;
+  }
+}
+.operators-filter-container .operators-filter .filter label {
+  font-size: 18px;
+}
+.operators-filter-container .filter-button-container .filter-operators {
+  width: 100%;
+  padding: 15px 0;
+  border-radius: 15px;
+  border: none;
+  background-color: #ff6600;
+  color: #fff;
+  text-transform: uppercase;
+  margin-top: 15px;
+}
+
 .operators-container .single-operator-container {
   display: flex;
   align-items: stretch;
@@ -29,23 +67,45 @@
   text-align: center;
   height: 200px;
 }
+@media screen and (max-width: 900px) {
+  .operators-container .single-operator-container {
+    display: block;
+    height: auto;
+  }
+}
 .operators-container .single-operator-container .operator-logo-container {
   width: 20%;
   margin-right: 15px;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-logo-container {
+    width: 35%;
+  }
+}
+.operators-container .single-operator-container .operator-logo-container img {
+  width: 100%;
+  height: 100%;
 }
 .operators-container .single-operator-container .operator-content-container {
   flex: 1 0 0%;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container {
-  display: flex;
-  align-items: center;
   height: 100%;
 }
-.operators-container .single-operator-container .operator-content-container .flex-container .operator-contents {
-  flex: 1 0 0%;
+@media screen and (min-width: 1201px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container {
+    display: flex;
+    align-items: center;
+  }
+}
+@media screen and (min-width: 1201px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents {
+    flex: 1 0 0%;
+  }
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .operator-name {
   font-size: 14px;
+  margin-top: 0;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container {
   border: 1px dotted #fff;
@@ -53,10 +113,28 @@
   font-size: 16px;
   margin-left: auto;
   margin-right: auto;
+  cursor: pointer;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container {
+    max-width: 90%;
+    margin-bottom: 20px;
+  }
+}
+.operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .promo-code-text .promo-code {
+  color: #ff6600;
+}
+.operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .promo-code-text .fa-copy {
+  margin-left: 5px;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .terms-conditions {
   text-align: left;
-  font-size: 10px;
+  font-size: 12px;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .terms-conditions {
+    display: none;
+  }
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .terms-conditions .terms-link {
   text-decoration: none;
@@ -65,20 +143,68 @@
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons {
   width: 20%;
 }
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
+}
+@media screen and (max-width: 480px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons {
+    display: block;
+  }
+}
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button {
   display: block;
-  padding: 15px 5px;
+  padding: 15px 0;
   border-radius: 15px;
   text-transform: uppercase;
   text-decoration: none;
 }
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button {
+    width: 45%;
+  }
+}
+@media screen and (max-width: 480px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button {
+    width: 100%;
+    margin-bottom: 20px;
+  }
+}
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.affiliate-link {
   background-color: #ff6600;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.affiliate-link {
+    margin-right: 15px;
+  }
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.permalink {
   margin-top: 10px;
   background: transparent;
   border: 1px solid #fff;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .operator-buttons .button.permalink {
+    margin-top: 0;
+  }
+}
+.operators-container .single-operator-container .operator-content-container .flex-container .terms-conditions-mobile {
+  display: none;
+  margin-top: 20px;
+  text-align: center;
+  font-size: 12px;
+}
+.operators-container .single-operator-container .operator-content-container .flex-container .terms-conditions-mobile .terms-link {
+  text-decoration: none;
+  color: #ff6600;
+}
+@media screen and (max-width: 1200px) {
+  .operators-container .single-operator-container .operator-content-container .flex-container .terms-conditions-mobile {
+    display: block;
+  }
 }
 
 /*# sourceMappingURL=style-index.css.map*/

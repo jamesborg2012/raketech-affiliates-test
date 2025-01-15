@@ -5,39 +5,50 @@ $operators = json_decode($response['body'], true);
 
 $display_date = date('F Y');
 
+$bonus_types = [];
+foreach ($operators as $operator) {
+	if (empty($operator['bonus_type'])):
+		continue;
+	endif;
+
+	if (isset($bonus_types[$operator['bonus_type']])) {
+		continue;
+	}
+
+	$bonus_types[$operator['bonus_type']] = $operator['bonus_type'];
+}
+
+sort($bonus_types);
+
 ?>
 <div class="operators-list-block-container">
 	<div class='title-container'>
 		<strong>Best Betting Sites | <?= $display_date ?></strong>
 	</div>
 	<div class='operators-filter-container'>
-		<strong>Filter the operators list!</strong>
 		<div class='operators-filter'>
-			<div class='operators-promo-code-filter'>
+			<div class='operators-promo-code-filter filter'>
 				<label>
 					<input type="checkbox" name='promo-code-filter' id='promo-code-filter' value='yes'>
-					Show operators with a promo code only
+					Show Promo Codes
 				</label>
 			</div>
-			<div class='operators-bonus-type-filter'>
+			<div class='operators-bonus-type-filter filter'>
 				<select name='bonus-type-filter' id='bonus-type-filter'>
-					<option value="">Select bonus type</option>
+					<option value="">Select Bonus Type</option>
 					<?php
-					foreach ($operators as $operator):
-						if (empty($operator['bonus_type'])):
-							continue;
-						endif;
+					foreach ($bonus_types as $bonus_type):
 					?>
-						<option value="<?= $operator['bonus_type'] ?>">
-							<?= $operator['bonus_type'] ?>
+						<option value="<?= $bonus_type ?>">
+							<?= $bonus_type ?>
 						</option>
 					<?php
 					endforeach; ?>
 				</select>
 			</div>
-			<div class="filter-button-container">
-				<button class='filter-operators' type="button">Filter your Toplist</button>
-			</div>
+		</div>
+		<div class="filter-button-container">
+			<button class='filter-operators' type="button">Filter</button>
 		</div>
 	</div>
 	<div class='operators-container'>
