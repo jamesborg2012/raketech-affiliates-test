@@ -26,6 +26,7 @@ sort($bonus_types);
 		<strong>Best Betting Sites | <?= $display_date ?></strong>
 	</div>
 	<div class='operators-filter-container'>
+		<h4 class="filter-message">Filter your sites to find a particular bonus or promo code of your liking</h4>
 		<div class='operators-filter'>
 			<div class='operators-promo-code-filter filter'>
 				<label>
@@ -35,7 +36,7 @@ sort($bonus_types);
 			</div>
 			<div class='operators-bonus-type-filter filter'>
 				<select name='bonus-type-filter' id='bonus-type-filter'>
-					<option value="">Select Bonus Type</option>
+					<option value="">No Bonus Chosen</option>
 					<?php
 					foreach ($bonus_types as $bonus_type):
 					?>

@@ -5,10 +5,8 @@
  * Replace them with your own styles or remove the file completely.
  */
 
- .wp-block-create-block-operators-list-block {
-	background-color: #21759b;
-	color: #fff;
-	padding: 2px;
+.wp-block-post-title {
+	display: none;
 }
 
 .is-layout-constrained > .operators-list-block-container {
@@ -27,6 +25,11 @@
 
 	@media screen and (max-width: 800px) {
 		width: 90%;
+	}
+
+	.filter-message {
+		margin-top: 0;
+		margin-bottom: 20px;
 	}
 
 	.operators-filter {
