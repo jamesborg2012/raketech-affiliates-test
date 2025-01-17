@@ -150,17 +150,10 @@
 						}
 
 						.copy-message-hidden {
-							opacity: 0;
-							height: 0px;
-							position: absolute;
+							display: none;
 
 							&.show {
-								-webkit-animation: fade 3s linear;
-							}
-							
-							@-webkit-keyframes fade {
-							  0%,100% { opacity: 0; height: 0px; position: absolute; }
-							  10%, 90% { opacity: 1; height: auto; position: relative; }
+								display: block;
 							}
 						}
 					}

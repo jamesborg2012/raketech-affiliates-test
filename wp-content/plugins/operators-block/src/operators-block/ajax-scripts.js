@@ -54,7 +54,7 @@ jQuery(document).ready(function ($) {
 			try {
 				//Using this method as an alternative when no https is available
 				document.execCommand('copy')
-				$(this).find('.copy-message-hidden').addClass('show')
+				$(this).parent().find('.copy-message-hidden').addClass('show')
 			} catch (error) {
 				console.error(error)
 			} finally {

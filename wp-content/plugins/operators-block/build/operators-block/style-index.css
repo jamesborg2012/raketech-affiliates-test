@@ -142,12 +142,10 @@
   margin-left: 5px;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .copy-message-hidden {
-  opacity: 0;
-  height: 0px;
-  position: absolute;
+  display: none;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .copy-message-hidden.show {
-  -webkit-animation: fade 3s linear;
+  display: block;
 }
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .terms-conditions {
   text-align: left;
