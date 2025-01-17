@@ -33,6 +33,26 @@ jQuery(document).ready(function ($) {
 			navigator.clipboard.writeText($promoCode).then(() => {
 				alert('Promo Code ' + $promoCode + ' copied to clipboard')
 			})
+		} else {
+			// Use the 'out of viewport hidden text area' trick
+			const textArea = document.createElement('textarea')
+			textArea.value = $promoCode
+
+			// Move textarea out of the viewport so it's not visible
+			textArea.style.position = 'absolute'
+			textArea.style.left = '-999999px'
+
+			document.body.prepend(textArea)
+			textArea.select()
+
+			try {
+				//Using this method as an alternative when no https is available
+				document.execCommand('copy')
+			} catch (error) {
+				console.error(error)
+			} finally {
+				textArea.remove()
+			}
 		}
 	})
 })

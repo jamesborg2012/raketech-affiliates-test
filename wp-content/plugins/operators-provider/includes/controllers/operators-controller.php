@@ -24,8 +24,7 @@ class Operators_Controller extends Operators_Provider_Core
     }
 
     /**
-     * Simple list API route to get the contents of the file
-     * WIP
+     * Simple list API route to get the contents of the file and filter the results
      */
     public function list_operators(WP_REST_Request $request)
     {
