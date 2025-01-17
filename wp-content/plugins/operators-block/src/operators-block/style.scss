@@ -5,8 +5,10 @@
  * Replace them with your own styles or remove the file completely.
  */
 
-.wp-block-post-title {
-	display: none;
+.page {
+	.wp-block-post-title {
+		display: none;
+	}
 }
 
 .is-layout-constrained > .operators-list-block-container {
@@ -89,7 +91,13 @@
 			}
 
 			@media screen and (max-width: 900px) {
-				// display: none;
+				width: 40%;
+				margin-left: 50%;
+				transform: translateX(-50%);
+			}
+
+			@media screen and (max-width: 480px) {
+				width: 50%;
 			}
 
 			img {

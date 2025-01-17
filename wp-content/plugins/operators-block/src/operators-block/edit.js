@@ -33,7 +33,7 @@ export default function Edit () {
 	return (
 		<>
 			<p {...useBlockProps()}>
-				{__('Render the Operators', 'operators-block')}
+				{__('Operator Sites Toplist', 'operators-block')}
 			</p>
 		</>
 	)

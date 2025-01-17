@@ -7,7 +7,7 @@
  *
  * Replace them with your own styles or remove the file completely.
  */
-.wp-block-post-title {
+.page .wp-block-post-title {
   display: none;
 }
 
@@ -82,6 +82,18 @@
 @media screen and (max-width: 1200px) {
   .operators-container .single-operator-container .operator-logo-container {
     width: 35%;
+  }
+}
+@media screen and (max-width: 900px) {
+  .operators-container .single-operator-container .operator-logo-container {
+    width: 40%;
+    margin-right: 50%;
+    transform: translateX(50%);
+  }
+}
+@media screen and (max-width: 480px) {
+  .operators-container .single-operator-container .operator-logo-container {
+    width: 50%;
   }
 }
 .operators-container .single-operator-container .operator-logo-container img {
