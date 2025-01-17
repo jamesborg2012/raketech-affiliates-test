@@ -29,9 +29,15 @@ jQuery(document).ready(function ($) {
 
 		$promoCode = $(this).find('.promo-code').attr('data-promo')
 
+		$(this)
+			.parents('.operators-container')
+			.find('.copy-message-hidden.show')
+			.removeClass('show')
+
 		if (navigator.clipboard) {
 			navigator.clipboard.writeText($promoCode).then(() => {
-				alert('Promo Code ' + $promoCode + ' copied to clipboard')
+				console.log($(this))
+				$(this).parent().find('.copy-message-hidden').addClass('show')
 			})
 		} else {
 			// Use the 'out of viewport hidden text area' trick
@@ -48,6 +54,7 @@ jQuery(document).ready(function ($) {
 			try {
 				//Using this method as an alternative when no https is available
 				document.execCommand('copy')
+				$(this).find('.copy-message-hidden').addClass('show')
 			} catch (error) {
 				console.error(error)
 			} finally {

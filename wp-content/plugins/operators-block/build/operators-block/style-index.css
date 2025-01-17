@@ -141,6 +141,26 @@
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .promo-code-text .fa-copy {
   margin-left: 5px;
 }
+.operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .copy-message-hidden {
+  opacity: 0;
+  height: 0px;
+  position: absolute;
+}
+.operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .promo-code-container .copy-message-hidden.show {
+  animation: fade 3s linear;
+}
+@keyframes fade {
+  0%, 100% {
+    opacity: 0;
+    height: 0px;
+    position: absolute;
+  }
+  10%, 90% {
+    opacity: 1;
+    height: auto;
+    position: relative;
+  }
+}
 .operators-container .single-operator-container .operator-content-container .flex-container .operator-contents .terms-conditions {
   text-align: left;
   font-size: 12px;

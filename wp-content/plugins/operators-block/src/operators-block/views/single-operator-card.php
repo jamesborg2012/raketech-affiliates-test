@@ -24,6 +24,7 @@ $logoPath = plugin_dir_url(dirname(__FILE__, 3)) . 'assets/logo.jpg';
                             </strong>
                             <i class="fa-solid fa-copy"></i>
                         </p>
+                        <p class='copy-message-hidden'>Promo Code <?= $operator['promo_code'] ?> copied!</p>
                     </div>
                 <?php endif; ?>
                 <p class="terms-conditions">
