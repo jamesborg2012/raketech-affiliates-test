@@ -24,7 +24,7 @@ jQuery(document).ready(function ($) {
 		})
 	})
 
-	$(document).on('click', '.promo-code-text', function (e) {
+	$(document).on('click touchend', '.promo-code-text', function (e) {
 		e.preventDefault()
 
 		$promoCode = $(this).find('.promo-code').attr('data-promo')

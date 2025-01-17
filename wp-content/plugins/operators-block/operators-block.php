@@ -43,7 +43,7 @@ function enqueue_scripts()
 }
 
 add_action('wp_ajax_filter_operators', 'filter_operators_toplist');
-add_action('wp_ajax_no_priv_filter_operators', 'filter_operators_toplist');
+add_action('wp_ajax_nopriv_filter_operators', 'filter_operators_toplist');
 
 function filter_operators_toplist()
 {
