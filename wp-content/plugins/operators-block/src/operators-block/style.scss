@@ -155,10 +155,10 @@
 							position: absolute;
 
 							&.show {
-								animation: fade 3s linear;
+								-webkit-animation: fade 3s linear;
 							}
 							
-							@keyframes fade {
+							@-webkit-keyframes fade {
 							  0%,100% { opacity: 0; height: 0px; position: absolute; }
 							  10%, 90% { opacity: 1; height: auto; position: relative; }
 							}
