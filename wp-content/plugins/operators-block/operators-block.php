@@ -35,7 +35,7 @@ add_action('wp_enqueue_scripts', 'enqueue_scripts');
 
 function enqueue_scripts()
 {
-	$version = 1.011;
+	$version = 1.1;
 	wp_enqueue_style('font-awesome-css', 'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css');
 
 	wp_enqueue_script('ajax-script', plugin_dir_url(__FILE__) . 'src/operators-block/ajax-scripts.js', array('jquery'), $version);
